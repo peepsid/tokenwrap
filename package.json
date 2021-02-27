@@ -7,14 +7,14 @@
     "clean:dist": "rimraf \"packages/*/dist\"",
     "clean:bundles": "rimraf bundles",
     "clean": "npm run clean:dist && npm run clean:bundles && npm run clean:deps",
-    "build": "npm run clean:dist && shglob -c \"tsc --build packages/core/ts.json packages/core-eosio/ts.json\" -g \"packages/!(core*)/ts.json\"",
-    "watch": "npm run clean:dist && shglob -c \"tsc --build --watch packages/core/ts.json packages/core-eosio/ts.json\" -g \"packages/!(core*)/ts.json\"",
+    "build": "npm run clean:dist && shglob -c \"tsc --build packages/core/ts.json packages/core-arisen/ts.json\" -g \"packages/!(core*)/ts.json\"",
+    "watch": "npm run clean:dist && shglob -c \"tsc --build --watch packages/core/ts.json packages/core-arisen/ts.json\" -g \"packages/!(core*)/ts.json\"",
     "bundle": "npm run clean:bundles && rollup -c",
     "create": "node createPackage.js",
     "lint": "tslint --project tsconfig.json --config tslint.json \"packages/*/src/**/*.ts\" \"packages/*/__tests__/**/*.ts\"",
     "lint-fix": "npm run lint -- --fix",
     "prepare": "npm run build",
-    "test": "eosup testnet -sq -c \"mocha -r ts-node/register \\\"packages/**/__tests__/*.spec.ts\\\"\""
+    "test": "arisenup testnet -sq -c \"mocha -r ts-node/register \\\"packages/**/__tests__/*.spec.ts\\\"\""
   },
   "husky": {
     "hooks": {
@@ -28,8 +28,8 @@
     "@types/node": "^12.0.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "eosjs": "^20.0.0",
-    "eosup": "^1.1.2",
+    "arisensdk": "^1.0.0",
+    "@arisensdk/up": "^1.0.0",
     "husky": "^2.3.0",
     "lerna": "^3.13.4",
     "mocha": "^6.1.4",
